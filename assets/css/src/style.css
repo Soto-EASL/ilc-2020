@@ -926,6 +926,17 @@ body .page-header {
 .ilc-sitemap-menu .sub-menu ul {
   list-style: none
 }
+.ilc-toggle-text {
+  display: none;
+  margin-bottom: 10px
+}
+.ilc-toggle-text-trigger {
+  cursor: pointer;
+  color: #fff;
+  background: #63cef5;
+  display: inline-block;
+  padding: 2px 15px
+}
 .ilc-side-menu-page-wrap {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -33,5 +33,22 @@
             });
             return false;
         });
+
+
+        $('.ilc-toggle-text-trigger').on('click', function (e) {
+            e.preventDefault();
+            var $button = $(this),
+                $con = $button.prev('.ilc-toggle-text');
+            if ($con.is(':animated')) {
+                return false;
+            }
+            if ($con.hasClass('ilc-active')) {
+                $con.removeClass('ilc-active').slideUp(250);
+                $button.html($button.data('more'));
+            } else {
+                $con.addClass('ilc-active').slideDown(250);
+                $button.html($button.data('less'));
+            }
+        });
     });
 })(jQuery);

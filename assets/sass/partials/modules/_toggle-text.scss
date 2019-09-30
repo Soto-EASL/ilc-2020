@@ -1,0 +1,13 @@
+
+.ilc-toggle-text {
+    display: none;
+    margin-bottom: 10px;
+
+    &-trigger {
+        cursor: pointer;
+        color: #fff;
+        background: $colorPrimary;
+        display: inline-block;
+        padding: 2px 15px;
+    }
+}

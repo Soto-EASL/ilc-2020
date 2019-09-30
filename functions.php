@@ -1,4 +1,7 @@
 <?php
+define('ILC_THEME_VERSION', '2020.1');
+
+
 require_once get_stylesheet_directory() . '/inc/post-types/post-types.php';
 require_once get_stylesheet_directory() . '/inc/settings.php';
 require_once get_stylesheet_directory() . '/inc/total-extend.php';
@@ -41,7 +44,7 @@ function ilc_custom_scripts() {
 	if ( wpex_get_mod( 'topbar_countdown_enable' ) ) {
 		wp_enqueue_script( 'countdown', get_stylesheet_directory_uri() . '/assets/js/jquery.countdown.min.js', array( 'jquery' ), '2.1.0', true );
 	}
-	wp_enqueue_script( 'ilc-custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'ilc-custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), ILC_THEME_VERSION, true );
 	$ssl_scheme     = is_ssl() ? 'https' : 'http';
 	$fornt_end_data = array(
 		'ajaxUrl' => admin_url( 'admin-ajax.php', $ssl_scheme ),

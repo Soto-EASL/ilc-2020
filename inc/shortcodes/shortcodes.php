@@ -13,6 +13,7 @@ function ilc_vc_get_shortcodes() {
 		'ilc_recent_news',
 		'ilc_sitemap',
 		'ilc_sponsors_carousel',
+		'ilc_toggle_text',
 		'ilc_yt_player',
 	);
 
