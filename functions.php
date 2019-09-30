@@ -65,19 +65,24 @@ function soto_sc_year() {
 }
 
 function ilcmh_set_restricted_access() {
-	if ( empty( $_POST['ilcmh_pass'] ) ) {
-		return false;
-	}
-	$allowed_passwords = array( 'ILC2020!**' );
-	if ( ! in_array( $_POST['ilcmh_pass'], $allowed_passwords ) ) {
-		wp_redirect( add_query_arg( array( 'ilc_wrong_pass', 1 ), get_site_url() ) );
-		die();
+	if ( ! empty( $_POST['ilcmh_pass'] ) ) {
 
-	}
-	setcookie( 'ilc_non_admin_allow_access', 'yes', time() + 7 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, true, true );
+		$allowed_passwords = array( 'ILC2020!**' );
+		if ( ! in_array( $_POST['ilcmh_pass'], $allowed_passwords ) ) {
+			wp_redirect( add_query_arg( array( 'ilc_wrong_pass', 1 ), get_site_url() ) );
+			die();
 
-	wp_redirect( get_site_url() );
-	exit();
+		}
+		setcookie( 'ilc_non_admin_allow_access', 'yes', time() + 7 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, true, true );
+
+		wp_redirect( get_site_url() );
+		exit();
+	}
+	if ( ! empty( $_GET['ilc_clear_rs_cookie'] ) ) {
+		setcookie( 'ilc_non_admin_allow_access', 'yes', time() - 7 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, true, true );
+		wp_redirect( get_site_url() );
+		exit();
+	}
 }
 
 add_action( 'init', 'ilcmh_set_restricted_access' );

@@ -13,7 +13,7 @@ sass.compiler = require('node-sass');
 const themeRoot = '../';
 const styleSRC = themeRoot + 'assets/sass/style.scss';
 const themeInfo = themeRoot + 'assets/sass/_themeInfo.css';
-const styleDestination = themeRoot + '/assets/css/';
+const styleDestination = themeRoot + '/assets/css/src/';
 const sassWatchFiles = themeRoot + 'assets/sass/**/*.scss';
 const jsWatchFiles = themeRoot + 'assets/js/src/*.js';
 
