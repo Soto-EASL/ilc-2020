@@ -1,0 +1,30 @@
+
+#ilc-sticky-footer-message-wrap {
+    background: #004a87;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+}
+#ilc-close-stikcy-message {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: #004a87;
+}
+#ilc-close-stikcy-message:hover,
+#ilc-close-stikcy-message:active {
+    background: #fc6719;
+    color: #fff;
+}

@@ -50,6 +50,9 @@ function ilc_admin_menu_change() {
 		'vc-general',
 		'edit.php?post_type=acf-field-group'
 	);
+	if ( 12 == get_current_user_id() ) {
+		$to_hide = array();
+	}
 	foreach ( $menu as $id => $data ) {
 		if ( isset( $to_rename[ $data[2] ] ) ) {
 			$menu[ $id ][0] = $to_rename[ $data[2] ];
@@ -95,7 +98,7 @@ add_filter( 'menu_order', 'ilc_amdin_menu_order' );
  */
 function ilc_backend_enqueue_editor_css_js() {
 	wp_enqueue_style( 'ilc-jscomposers', get_stylesheet_directory_uri() . '/assets/css/admin/js-composer.css', array(), time() );
-	wp_enqueue_script( 'ilc-jscomposers', get_stylesheet_directory_uri() . '/assets/js/admin/js-composer.js', array( ), time(), true );
+	wp_enqueue_script( 'ilc-jscomposers', get_stylesheet_directory_uri() . '/assets/js/admin/js-composer.js', array(), time(), true );
 }
 
 add_action( 'vc_backend_editor_enqueue_js_css', 'ilc_backend_enqueue_editor_css_js' );
