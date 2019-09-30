@@ -27,7 +27,7 @@ ILC_VC_Button_Grid::$active = false;
 
 $class_to_filter = 'wpb_ilc_button_grid wpb_content_element ' . $this->getCSSAnimation( $css_animation );
 $class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
-$css_class       = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->ilcGtSettings('base'), $atts );
+$css_class       = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 
 $wrapper_attributes = array();
 if ( ! empty( $el_id ) ) {
@@ -36,7 +36,7 @@ if ( ! empty( $el_id ) ) {
 if ( $css_class ) {
 	$wrapper_attributes[] = 'class="' . esc_attr( trim( $css_class ) ) . '"';
 }
-
+$output = '';
 if ( $buttons_html ):
 	?>
     <div <?php echo implode( ' ', $wrapper_attributes ) ?>>

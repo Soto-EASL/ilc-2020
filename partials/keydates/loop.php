@@ -29,13 +29,13 @@ $dates = array();
 if ( $start_date ) {
 	$start_date = new DateTime($start_date);
 	if($start_date){
-		$dates[] = $start_date->format('d/m/Y');
+		$dates[] = $start_date->format('j M Y');
     }
 }
 if ( $end_date ) {
 	$end_date = new DateTime($end_date);
 	if($end_date){
-		$dates[] = $end_date->format('d/m/Y');
+		$dates[] = $end_date->format('j M Y');
 	}
 }
 

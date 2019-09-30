@@ -106,7 +106,7 @@ class ILC_acf_plugin_menu_selector extends acf_field {
 
 	function render_field( $field ) {
 
-
+		
 		/*
 		*  Create a simple text input using the 'font_size' setting.
 		*/

@@ -17,9 +17,14 @@ class ILC_Key_Date_Config {
 	 */
 	public function __construct() {
 		// Adds the portfolio post type
-		add_action( 'init', array( $this, 'register_post_type' ), 0 );
+		add_action( 'init', array( 'ILC_Key_Date_Config', 'register_post_type' ), 0 );
 		// Register event topics
-		add_action( 'init', array( $this, 'register_category' ), 0 );
+		add_action( 'init', array( 'ILC_Key_Date_Config', 'register_category' ), 0 );
+		if ( is_admin() ) {
+			add_filter( 'wpex_main_metaboxes_post_types', array( 'ILC_Key_Date_Config', 'add_total_metabox_support' ) );
+			// Add meta fields for key date
+			add_filter( 'wpex_metabox_array', array( 'ILC_Key_Date_Config', 'meta_array' ), 100, 2 );
+		}
 	}
 
 	/**
@@ -43,7 +48,7 @@ class ILC_Key_Date_Config {
 	 *
 	 * @since 2.0.0
 	 */
-	public function register_post_type() {
+	public static function register_post_type() {
 		register_post_type( self::get_type_slug(), array(
 			'labels'              => array(
 				'name'               => __( 'Key Date', 'total-child' ),
@@ -82,7 +87,7 @@ class ILC_Key_Date_Config {
 	 *
 	 * @since 2.0.0
 	 */
-	public function register_category() {
+	public static function register_category() {
 		$args = array(
 			'labels'            => array(
 				'name'                       => __( 'Category', 'total' ),
@@ -112,6 +117,12 @@ class ILC_Key_Date_Config {
 		);
 
 		register_taxonomy( self::get_category_slug(), array( self::get_type_slug() ), $args );
+	}
+
+	public static function add_total_metabox_support( $post_types ) {
+		$post_types[ self::get_type_slug() ] = self::get_type_slug();
+
+		return $post_types;
 	}
 
 	/**

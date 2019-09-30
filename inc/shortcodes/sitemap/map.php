@@ -5,18 +5,18 @@ if (!defined('ABSPATH')) {
 }
 
 return array(
-    'name' => __('Sitemap', 'ilc'),
+    'name' => __('Sitemap', 'crvc_extension'),
     'base' => 'ilc_sitemap',
     'icon' => 'vcex-icon-box vcex-icon ticon ticon-sitemap',
     'is_container' => false,
     'show_settings_on_create' => false,
-    'category' => __('ILC', 'ilc'),
-    'description' => __('Output sitemap.', 'ilc'),
+    'category' => __('ILC', 'total'),
+    'description' => __('Output sitemap.', 'total'),
     'params' => array(
         array(
             'type' => 'vcex_ofswitch',
             'std' => 'true',
-            'heading' => __('Center items', 'ilc'),
+            'heading' => __('Center items', 'total'),
             'param_name' => 'center_items',
         ),
         vc_map_add_css_animation(),

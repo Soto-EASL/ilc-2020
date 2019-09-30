@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 $url        = get_field( 'keydate_url' );
-$start_date = get_field( 'keydate_start_date', false, false );
+$start_date = get_field( 'keydate_start_date' );
 $start_time = get_field( 'keydate_start_time' );
-$end_date   = get_field( 'keydate_expiry_date', false, false );
+$end_date   = get_field( 'keydate_expiry_date' );
 $end_time   = get_field( 'keydate_end_time' );
 $alt_title  = get_field( 'keydate_alt_title' );
 $alt_title  = trim( $alt_title );

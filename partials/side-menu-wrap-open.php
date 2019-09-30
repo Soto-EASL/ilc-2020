@@ -22,4 +22,16 @@ $page_side_menu     = get_field( 'page_side_menu', $page_id );
 		) );
 		?>
 	</div>
+	<?php if(get_field('introduction_content')){?>
 	<div class="ilc-side-menu-page-content-wrap">
+		<?php echo get_field('introduction_content');?>
+	</div>
+
+	<div class="site-content clr">
+
+	<?php } else { ?>
+
+	<div class="ilc-side-menu-page-content-wrap">
+
+
+	<?php } ?>

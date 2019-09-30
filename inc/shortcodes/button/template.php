@@ -21,6 +21,7 @@ $url          = '';
 $new_tab      = '';
 $downloadable = '';
 $color        = '';
+$download     = '';
 
 $el_id = $el_class = $css_animation = $css = '';
 
@@ -46,7 +47,7 @@ if ( $title && $url ) :
 
 	$css_class = $this->getCSSAnimation( $css_animation );
 	$css_class .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
-	$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $css_class, $this->ilcGtSettings('base'), $atts );
+	$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $css_class, $this->settings['base'], $atts );
 
 	if ( $css_class ) {
 		$button_classes[] = $css_class;
@@ -62,7 +63,8 @@ if ( $title && $url ) :
 	}
 
 	if ( $downloadable == 'true' ) {
-		$wrapper_attributes[] = 'download="download"';
+		//$wrapper_attributes[] = 'download="download"';
+		$download = 'download';
 		$button_classes[]     = 'ilc-btn-download';
 	}
 
@@ -72,5 +74,5 @@ if ( $title && $url ) :
 
 	$wrapper_attributes[] = 'href="' . esc_url( $url ) . '"';
 	?>
-    <a <?php echo implode( ' ', $wrapper_attributes ); ?>><span><?php echo $title; ?></span></a>
+    <a <?php echo $download;?> <?php echo implode( ' ', $wrapper_attributes ); ?>><span><?php echo $title; ?></span></a>
 <?php endif; ?>
