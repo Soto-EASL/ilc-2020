@@ -1,0 +1,74 @@
+.ilc-pv-carousel-item {
+    &-inner {
+
+    }
+
+    & &-link {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+
+        img {
+            display: block !important;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        span {
+            background: rgba($colorWhite, .9);
+            color: $colorBody;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 18px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 12px 15px;
+            z-index: 5;
+            transform: translateY(102%);
+            transition: transform .25s cubic-bezier(.65, .03, .83, .48);
+        }
+
+        &:hover span {
+            transform: translateY(0);
+        }
+    }
+
+    &-video &-link {
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 24px;
+            height: 18px;
+            background: $colorWhite;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        &::after {
+            content: '\f16a';
+            color: #909091;
+            font-family: ticons;
+            font-size: 64px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            transition: color .25s;
+        }
+        &:hover::after {
+            color: $colorPrimary;
+        }
+    }
+}

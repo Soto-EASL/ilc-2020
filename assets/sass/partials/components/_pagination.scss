@@ -1,0 +1,23 @@
+.ilc-pagination-list{
+    .page-numbers {
+        border: 0 none;
+        border-radius: 0!important;;
+        color: $colorWhite;
+        li {
+            border-radius: 0!important;;
+            border: 0 none;
+            margin-right: 5px;
+            &:last-child {
+                margin-right: 0;
+            }
+            .page-numbers {
+                background: $colorPrimary;
+                border-radius: 0!important;
+                &:hover, &:active, &.current {
+                    background: $colorSecondary;
+                    color: $colorWhite;
+                }
+            }
+        }
+    }
+}

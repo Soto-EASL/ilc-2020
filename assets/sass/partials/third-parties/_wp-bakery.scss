@@ -1,0 +1,15 @@
+body .wpb_single_image .easl-vc-image-over {
+    background: rgba(255, 255, 255, .80);
+    color: $colorSecondary;
+    display: block;
+    padding: 10px 15px;
+    opacity: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    z-index: 2;
+}

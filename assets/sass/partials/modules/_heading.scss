@@ -1,0 +1,49 @@
+.ilc-heading-wrap {
+    margin: 0 0 30px;
+
+    .ilc-heading {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38px;
+        color: $colorTitle;
+        margin: 0;
+        padding: 0;
+    }
+
+    &.ilc-color-primary .ilc-heading {
+        color: $colorPrimary;
+    }
+
+    &.ilc-color-secondary .ilc-heading {
+        color: $colorSecondary;
+    }
+
+    &.ilc-color-gray .ilc-heading {
+        color: $colorBody;
+    }
+
+    h1.ilc-heading {
+        font-size: 42px;
+        line-height: 52px
+    }
+
+    h2.ilc-heading {
+        font-size: 32px;
+        line-height: 38px
+    }
+
+    h3.ilc-heading {
+        font-size: 21px;
+        line-height: 28px
+    }
+
+    h4.ilc-heading {
+        font-size: 18px;
+        line-height: 24px
+    }
+
+    h5.ilc-heading {
+        font-size: 16px;
+        line-height: 20px
+    }
+}

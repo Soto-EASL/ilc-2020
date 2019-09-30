@@ -1,0 +1,62 @@
+
+// MEDIA QUERY MANAGER
+/*
+0 - 360
+0 - 566
+567 - 767
+0 - 767: phone
+768 - 959
+768 - 849
+850 - 959
+960 - 1075
+960 - 1130
+1131 - 1175
+
+768 - @ desktopAll
+
+$breakpoint arguments choices:
+- phone
+- desktop
+
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == bp0-360 {
+        @media only screen and (max-width: 360px) { @content };
+    }
+    @if $breakpoint == bp0-566 {
+        @media only screen and (max-width: 566px) { @content };
+    }
+    @if $breakpoint == bp567-767 {
+        @media only screen and (min-width: 567px) and (max-width: 767px) { @content };
+    }
+    @if $breakpoint == bp0-767 {
+        @media only screen and (max-width: 767px) { @content };
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 767px) { @content };
+    }
+    @if $breakpoint == bp767 {
+        @media only screen and (min-width: 768px) { @content };
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 768px) { @content };
+    }
+    @if $breakpoint == bp768-959 {
+        @media only screen and (min-width: 768px) and (max-width: 959px) { @content };
+    }
+    @if $breakpoint == bp768-849 {
+        @media only screen and (min-width: 768px) and (max-width: 849px) { @content };
+    }
+    @if $breakpoint == bp850-959 {
+        @media only screen and (min-width: 850px) and (max-width: 959px) { @content };
+    }
+    @if $breakpoint == bp960-1075 {
+        @media only screen and (min-width: 960px) and (max-width: 1075px) { @content };
+    }
+    @if $breakpoint == bp960-1130 {
+        @media only screen and (min-width: 960px) and (max-width: 1130px) { @content };
+    }
+    @if $breakpoint == bp1131-1175 {
+        @media only screen and (min-width: 1131px) and (max-width: 1175px) { @content };
+    }
+}

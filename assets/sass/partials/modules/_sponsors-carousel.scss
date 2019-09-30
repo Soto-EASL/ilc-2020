@@ -1,0 +1,50 @@
+.wpb_ilc_sponsors_carousel {
+    padding-left: 44px;
+    padding-right: 44px;
+
+    .owl-carousel .owl-item {
+        img {
+            width: auto;
+            height: auto;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .ilc-carousel.wpex-carousel .owl-nav {
+        .owl-prev {
+            left: -70px;
+        }
+
+        .owl-next {
+            right: -70px;
+        }
+    }
+}
+
+.ilc-sponsors-carousel-item {
+    padding: 0;
+
+    &-inner {
+        margin-left: 1px;
+        margin-right: 1px;
+        position: relative;
+        padding: 25px 15px 36px;
+        border: 1px solid #b2b2b2;
+        text-align: center;
+
+        span {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: $colorBody;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 14px;
+            padding: 0 10px 10px;
+        }
+    }
+}

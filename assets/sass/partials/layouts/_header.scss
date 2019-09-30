@@ -1,0 +1,44 @@
+#ilc-site-header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 15px 0 18px;
+}
+
+.ilc-site-logo {
+    width: calc(100% - 380px);
+    .logo-img {
+        display: block;
+    }
+}
+
+.ilc-header-buttons-wrap {
+    width: 375px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        li {
+            width: calc((100% - 10px) / 2);
+            margin-left: 10px;
+
+            &:nth-child(2n+1) {
+                margin-left: 0;
+            }
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
+body #site-header-inner {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}

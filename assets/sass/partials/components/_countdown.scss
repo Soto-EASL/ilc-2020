@@ -1,0 +1,40 @@
+.top-bar-col.top-bar-col-countdown {
+    background: #005482;
+    color: #fff;
+    font-family: "Oswald";
+    opacity: 1;
+    padding: 20px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 120px;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+}
+.countdown-hide {
+    opacity: 0!important;
+}
+
+.countdown-hi .ilc-countdown {
+
+}
+.top-bar-col-countdown .countdown-dn {
+    display: inline-block;
+    font-size: 70px;
+    line-height: 70px;
+}
+.top-bar-col-countdown .countdown-dl {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 16px;
+}
+.top-bar-col-countdown .ilc-countdown-text {
+    display: inline-block;
+    font-size: 44px;
+    line-height: 54px;
+}
+.top-bar-col-countdown .countdown-dl:before{
+    content: "";
+    display: block;
+    height: 0;
+}

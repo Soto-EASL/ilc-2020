@@ -1,0 +1,111 @@
+body #footer-callout-wrap {
+    background-color: transparent;
+    border: 0 none;
+    padding: 20px 0;
+}
+#footer-callout {
+    justify-content: space-between;
+}
+.footer-callout {
+    &-text {
+        color: $colorTitle;
+        font-size: 24px;
+        line-height: 30px;
+        flex: 1 1 0;
+        p {
+            color: inherit;
+            font-size: inherit;
+            margin-bottom: 0;
+        }
+    }
+}
+#footer-builder {
+    background: #ebefee;
+    color: #9aaeac;
+    padding: 50px 0 20px;
+    font-size: 16px;
+    line-height: 26px;
+    border-top: 1px solid #f3f5f5;
+    border-bottom: 1px solid #d5d5d5;
+    .wpb_content_element {
+        margin-bottom: 30px;
+    }
+    p {
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    a:link, a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        color: $colorPrimary;
+    }
+    .ilc-footer-widget-title {
+        font-weight: 700;
+    }
+}
+
+
+body #footer-bottom {
+    background: #b0b0b0;
+    color: $colorWhite;
+    font-size: 16px;
+    line-height: 18px;
+
+    &-inner {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    p {
+        color: inherit;
+        line-height: 18px;
+    }
+
+    a:link, a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        color: $colorPrimary;
+    }
+}
+
+.ilc-footer-copy {
+    &-items {
+        flex: 1 1 0;
+
+        & &-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &-items &-item {
+        display: inline-block;
+        position: relative;
+        border-right: 1px solid $colorWhite;
+        margin: 0;
+        padding: 0 15px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            border-right: 0 none;
+            padding-right: 0;
+        }
+    }
+}
+
+.ilc-soto-attribution {
+    white-space: nowrap;
+    text-align: right;
+}
+.footer-bottom-flex::after {
+    display: none;
+}

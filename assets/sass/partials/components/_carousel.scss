@@ -1,0 +1,77 @@
+
+.ilc-carousel {
+
+}
+
+.ilc-carousel.wpex-carousel .owl-nav {
+    position: static;
+    background: transparent;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto;
+    height: auto;
+
+    .owl-prev, .owl-next {
+        width: 50px;
+        height: 50px;
+        background: $colorPrimary !important;
+        z-index: 6;
+        margin: 0;
+        padding: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: auto;
+        left: auto;
+        bottom: auto;
+        opacity: 1;
+        overflow: hidden;
+
+        .ticon {
+            font-size: 30px;
+            color: $colorWhite;
+            position: relative;
+            z-index: 2;
+        }
+
+        &::after {
+            content: '';
+            background: $colorSecondary;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            transition: transform .25s cubic-bezier(.65, .03, .83, .48);
+        }
+
+        &:hover::after {
+            transform: translateX(0) !important;
+        }
+    }
+
+    .owl-prev {
+        left: -25px;
+
+        &::after {
+            transform: translateX(102%);
+        }
+
+        .ticon::before {
+            content: '\f104';
+        }
+    }
+
+    .owl-next {
+        right: -25px;
+
+        &::after {
+            transform: translateX(-102%);
+        }
+
+        .ticon::before {
+            content: '\f105';
+        }
+    }
+}
+

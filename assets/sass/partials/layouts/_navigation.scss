@@ -1,0 +1,57 @@
+#ilc-site-header-nav {
+    background: #8f8f8f;
+}
+
+body .navbar-style-one {
+    left: 0;
+    right: 0;
+    text-align: left;
+
+    .dropdown-menu {
+        > li.menu-item {
+            margin-right: 38px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &.current-menu-item {
+                > a{
+                    color: $colorWhite!important;
+                    font-weight: 400;
+                }
+                > a::after {
+                    visibility: visible;
+                    bottom: 6px;
+                }
+            }
+        }
+        > li.menu-item > a {
+            line-height: 50px;
+            padding: 0;
+            color: $colorWhite;
+            font-size: 18px;
+            font-weight: 700;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 4px;
+                background-color: $colorPrimary;
+                visibility: hidden;
+                transition: visibility .15s, bottom .25s;
+            }
+            &:hover{
+                color: $colorWhite!important;
+                &::after {
+                    visibility: visible;
+                    bottom: 6px;
+                }
+            }
+            > span.link-inner {
+                border-radius: 0;
+                padding: 0;
+            }
+        }
+    }
+}

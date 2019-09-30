@@ -1,0 +1,28 @@
+.ilc-breadcrumbs-wrap {
+    padding: 17px 0;
+    background: $colorWhite;
+    .site-breadcrumbs {
+        font-size: 18px;
+        line-height: 18px;
+        color: inherit;
+        a {
+            font-weight: bold;
+            position: relative;
+            margin-right: 22px;
+            display: inline-block;
+            &::after {
+                content: '\f105';
+                color: $colorBody;
+                font-family: ticons;
+                font-size: 18px;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: absolute;
+                right: -16px;
+                top: 2px;
+                font-weight: 400;
+            }
+        }
+    }
+}

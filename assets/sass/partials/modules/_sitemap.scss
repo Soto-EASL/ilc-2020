@@ -1,0 +1,79 @@
+.ilc-sitemap {
+    &-menu-wrap {
+        .ilc-sitemap-center & {
+            text-align: center;
+        }
+
+        .ilc-sitemap-menu {
+            display: inline-block;
+            text-align: left;
+            margin: 0;
+        }
+    }
+
+    &-menu {
+        li {
+            margin: 0;
+
+            a {
+                display: inline-block;
+                margin: 0 0 .8rem;
+                position: relative;
+            }
+        }
+
+        > li {
+            list-style: none;
+
+            a {
+                font-weight: 700;
+                padding: 2px 15px;
+                background: $colorPrimary;
+                transition: all .25s;
+                position: relative;
+
+                &::before {
+                    content: "\f105";
+                    font-family: ticons;
+                    display: inline-block;
+                    position: absolute;
+                    left: 7px;
+                    top: 3px;
+                }
+
+                &, &:link, &:visited {
+                    color: $colorWhite;
+                    text-decoration: none;
+                }
+
+                &:hover,
+                &:active {
+                    background: #5fc3e6;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .sub-menu {
+            margin-left: 2em;
+            margin-bottom: 0;
+
+            li a::before {
+                content: "\f105";
+                font-family: ticons;
+                position: absolute;
+                left: -10px;
+                top: 1px;
+            }
+        }
+
+        & .sub-menu {
+            list-style: none;
+
+            ul {
+                list-style: none;
+            }
+        }
+    }
+}
