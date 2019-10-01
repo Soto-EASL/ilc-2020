@@ -1,5 +1,5 @@
 <?php
-define('ILC_THEME_VERSION', '2020.1');
+define( 'ILC_THEME_VERSION', '2020.1' );
 
 
 require_once get_stylesheet_directory() . '/inc/post-types/post-types.php';
@@ -102,6 +102,24 @@ function ilcmh_load_landing_page() {
 }
 
 add_action( 'template_redirect', 'ilcmh_load_landing_page' );
+
+function ilc_f___the_browser_cache( $src, $handle ) {
+	if ( ! in_array( $handle, array( 'wpex-style', 'ilc-youtube-player-scripts', 'ilc-custom' ) ) ) {
+		return $src;
+	}
+
+	return add_query_arg( 'ver', ILC_THEME_VERSION, $src );
+}
+
+function ilc_conditional_actions_init(){
+	$site_url = get_site_url();
+	if(false !== strpos($site_url, 'stage.ilc-congress.eu')){
+		add_filter( 'style_loader_src', 'ilc_f___the_browser_cache', 20, 2 );
+		add_filter( 'script_loader_src', 'ilc_f___the_browser_cache', 20, 2 );
+
+	}
+}
+add_action('init', 'ilc_conditional_actions_init');
 
 
 

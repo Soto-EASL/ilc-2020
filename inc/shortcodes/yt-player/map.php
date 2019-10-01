@@ -38,7 +38,7 @@ return array(
 		),
 		array(
 			'type'        => 'textfield',
-			'heading'     => __( 'Video Start', 'total-child' ),
+			'heading'     => __( 'Video Starts at', 'total-child' ),
 			'param_name'  => 'video_start',
 			'value'       => '',
 			'description' => __( 'Enter the number of seconds from where the video starts.', 'total-child' ),
@@ -46,7 +46,7 @@ return array(
 		),
 		array(
 			'type'        => 'textfield',
-			'heading'     => __( 'Video End', 'total-child' ),
+			'heading'     => __( 'Video Ends at', 'total-child' ),
 			'param_name'  => 'video_end',
 			'value'       => '',
 			'description' => __( 'Enter the number of seconds at where the video ends.', 'total-child' ),
