@@ -1,5 +1,5 @@
 <?php
-define( 'ILC_THEME_VERSION', '2020.1' );
+define( 'ILC_THEME_VERSION', '2020.1.2' );
 
 
 require_once get_stylesheet_directory() . '/inc/post-types/post-types.php';
@@ -66,60 +66,6 @@ function soto_sc_year() {
 
 	return $year;
 }
-
-function ilcmh_set_restricted_access() {
-	if ( ! empty( $_POST['ilcmh_pass'] ) ) {
-
-		$allowed_passwords = array( 'ILC2020!**' );
-		if ( ! in_array( $_POST['ilcmh_pass'], $allowed_passwords ) ) {
-			wp_redirect( add_query_arg( array( 'ilc_wrong_pass', 1 ), get_site_url() ) );
-			die();
-
-		}
-		setcookie( 'ilc_non_admin_allow_access', 'yes', time() + 7 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, true, true );
-
-		wp_redirect( get_site_url() );
-		exit();
-	}
-	if ( ! empty( $_GET['ilc_clear_rs_cookie'] ) ) {
-		setcookie( 'ilc_non_admin_allow_access', 'yes', time() - 7 * DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, true, true );
-		wp_redirect( get_site_url() );
-		exit();
-	}
-}
-
-add_action( 'init', 'ilcmh_set_restricted_access' );
-
-
-function ilcmh_load_landing_page() {
-	if ( is_user_logged_in() ) {
-		return;
-	}
-	if ( empty( $_COOKIE['ilc_non_admin_allow_access'] ) || 'yes' != $_COOKIE['ilc_non_admin_allow_access'] ) {
-		get_template_part( 'ilc-landing-page' );
-		die();
-	}
-}
-
-add_action( 'template_redirect', 'ilcmh_load_landing_page' );
-
-function ilc_f___the_browser_cache( $src, $handle ) {
-	if ( ! in_array( $handle, array( 'wpex-style', 'ilc-youtube-player-scripts', 'ilc-custom' ) ) ) {
-		return $src;
-	}
-
-	return add_query_arg( 'ver', ILC_THEME_VERSION, $src );
-}
-
-function ilc_conditional_actions_init(){
-	$site_url = get_site_url();
-	if(false !== strpos($site_url, 'stage.ilc-congress.eu')){
-		add_filter( 'style_loader_src', 'ilc_f___the_browser_cache', 20, 2 );
-		add_filter( 'script_loader_src', 'ilc_f___the_browser_cache', 20, 2 );
-
-	}
-}
-add_action('init', 'ilc_conditional_actions_init');
 
 
 
