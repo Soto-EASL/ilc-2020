@@ -11,9 +11,26 @@ body .page-header {
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 95px;
-
+    height: 400px;
+    .ilc-page-header-img {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .page-header-inner-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 2;
+    }
     .page-header-inner {
-        height: 400px;
         position: relative;
     }
 

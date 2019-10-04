@@ -25,4 +25,8 @@ if($page_header_image_src){
 
 ?>
 <div class="ilc-page-header-bg-wrap<?php echo $class; ?>"<?php echo $bg_image_style ?>>
+    <?php if($page_header_image_src): ?>
+        <img class="ilc-page-header-img" style="opacity: 0" src="<?php echo $page_header_image_src; ?>" alt="">
+    <?php endif; ?>
+    <div class="page-header-inner-wrap">
 
