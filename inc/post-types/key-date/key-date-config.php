@@ -21,9 +21,11 @@ class ILC_Key_Date_Config {
 		// Register event topics
 		add_action( 'init', array( 'ILC_Key_Date_Config', 'register_category' ), 0 );
 		if ( is_admin() ) {
-			add_filter( 'wpex_main_metaboxes_post_types', array( 'ILC_Key_Date_Config', 'add_total_metabox_support' ) );
-			// Add meta fields for key date
-			add_filter( 'wpex_metabox_array', array( 'ILC_Key_Date_Config', 'meta_array' ), 100, 2 );
+			add_filter( 'manage_' . self::get_type_slug() . '_posts_columns', array( $this, 'extra_columns' ) );
+			add_action( 'manage_' . self::get_type_slug() . '_posts_custom_column', array(
+				$this,
+				'extra_columns_value'
+			), 100, 2 );
 		}
 	}
 
@@ -119,72 +121,21 @@ class ILC_Key_Date_Config {
 		register_taxonomy( self::get_category_slug(), array( self::get_type_slug() ), $args );
 	}
 
-	public static function add_total_metabox_support( $post_types ) {
-		$post_types[ self::get_type_slug() ] = self::get_type_slug();
+	public function extra_columns( $columns = array() ) {
+		$columns['kd_date'] = 'Keydate Date';
 
-		return $post_types;
+		return $columns;
 	}
 
-	/**
-	 *
-	 * @param type $array
-	 * @param type $post
-	 *
-	 * @return type
-	 */
-	public static function meta_array( $array, $post ) {
-		if ( self::get_type_slug() != get_post_type( $post ) ) {
-			return $array;
+	public function extra_columns_value( $column, $post_id ) {
+		$value = '';
+		switch ( $column ) {
+			case 'kd_date':
+				$value = get_field( 'keydate_start_date', $post_id );
+				break;
 		}
-		$prefix                 = 'keydate_';
-		$array                  = array();
-		$array['key_date_data'] = array(
-			'title'    => esc_html__( 'Key Date Data', 'total-child' ),
-			'settings' => array(
-				'url'         => array(
-					'title'       => esc_html__( 'URL', 'total-child' ),
-					'id'          => $prefix . 'url',
-					'type'        => 'text',
-					'description' => esc_html__( 'Enter the url of this key date.', 'total-child' ),
-				),
-				'start_date'  => array(
-					'title'       => esc_html__( 'Start Date', 'total-child' ),
-					'id'          => $prefix . 'date',
-					'type'        => 'date',
-					'description' => esc_html__( 'Enter the date of the key date.', 'total-child' ),
-				),
-				'start_time'  => array(
-					'title'       => esc_html__( 'Start Time', 'total-child' ),
-					'id'          => $prefix . 'start_time',
-					'type'        => 'text',
-					'description' => esc_html__( 'Enter the start time of this key date. If filled this will be displayed with End Time, eg. 04 February 2019 (10:00CET)', 'total-child' ),
-				),
-				'expiry_date' => array(
-					'title'       => esc_html__( 'End Date', 'total-child' ),
-					'id'          => $prefix . 'expiry_date',
-					'type'        => 'date',
-					'description' => esc_html__( 'Enter the end date of the key date.', 'total-child' ),
-				),
-				'end_time'    => array(
-					'title'       => esc_html__( 'End Time', 'total-child' ),
-					'id'          => $prefix . 'end_time',
-					'type'        => 'text',
-					'description' => esc_html__( 'Enter the end time of this key date. If filled this will be displayed with End Time, eg. 13 February 2019 (23:59CET)', 'total-child' ),
-				),
-				'alt_title'   => array(
-					'title'         => esc_html__( 'Alternative Title', 'total-child' ),
-					'id'            => $prefix . 'alt_title',
-					'type'          => 'editor',
-					'tiny'          => true,
-					'row'           => 5,
-					'media_buttons' => false,
-					'description'   => esc_html__( 'Enter alternative title. Useful to add custom links to a word or few words. Leave empty to use main title. Allowed tags: a, span, em, strong.', 'total-child' ),
-				),
 
-			)
-		);
-
-		return $array;
+		echo $value;
 	}
 }
 

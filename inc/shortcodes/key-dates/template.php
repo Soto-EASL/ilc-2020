@@ -33,7 +33,7 @@ $css_animation   = $this->getCSSAnimation( $css_animation );
 $class_to_filter = 'ilc-key-dates wpb_content_element ';
 
 $class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
-$css_class       = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
+$css_class       = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->ilcGtSettings( 'base' ), $atts );
 
 $css_class .= ' ilc-key-dates-' . $display_type;
 
@@ -69,7 +69,7 @@ if ( $orderby == 'start_date' ) {
 if ( $orderby == 'title' ) {
 	$query_args['orderby'] = 'title';
 }
-$today = date('Ymd');
+$today = date( 'Ymd' );
 
 if ( 'true' == $hide_expired ) {
 	$query_args['meta_query'] = array(

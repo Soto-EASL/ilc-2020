@@ -14,7 +14,7 @@ $alt_title  = trim( $alt_title );
 
 $alt_title = trim( $alt_title );
 
-$today = date('Ymd');
+$today = date( 'Ymd' );
 
 $status = 'upcoming';
 
@@ -27,15 +27,27 @@ if ( ( $start_date < $today ) && ( $end_date <= $today ) ) {
 
 $dates = array();
 if ( $start_date ) {
-	$start_date = new DateTime($start_date);
-	if($start_date){
-		$dates[] = $start_date->format('j M Y');
-    }
+	$start_date = new DateTime( $start_date );
+	if ( $start_date ) {
+		$start_date = $start_date->format( 'j M Y' );
+	}
+	if ( $start_date && $start_time ) {
+		$start_date .= ' (' . $start_time . ')';
+	}
+	if ( $start_date ) {
+		$dates[] = $start_date;
+	}
 }
 if ( $end_date ) {
-	$end_date = new DateTime($end_date);
-	if($end_date){
-		$dates[] = $end_date->format('j M Y');
+	$end_date = new DateTime( $end_date );
+	if ( $end_date ) {
+		$end_date = $end_date->format( 'j M Y' );
+	}
+	if ( $end_date && $end_time ) {
+		$end_date .= ' (' . $end_time . ')';
+	}
+	if ( $end_date ) {
+		$dates[] = $end_date;
 	}
 }
 
