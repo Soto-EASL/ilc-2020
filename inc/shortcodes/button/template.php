@@ -21,7 +21,6 @@ $url          = '';
 $new_tab      = '';
 $downloadable = '';
 $color        = '';
-$download     = '';
 
 $el_id = $el_class = $css_animation = $css = '';
 
@@ -63,7 +62,7 @@ if ( $title && $url ) :
 	}
 
 	if ( $downloadable == 'true' ) {
-		//$wrapper_attributes[] = 'download="download"';
+		$wrapper_attributes[] = 'download="'. basename( parse_url( $url, PHP_URL_PATH ) ) .'"';
 		$download = 'download';
 		$button_classes[]     = 'ilc-btn-download';
 	}
@@ -74,5 +73,5 @@ if ( $title && $url ) :
 
 	$wrapper_attributes[] = 'href="' . esc_url( $url ) . '"';
 	?>
-    <a <?php echo $download;?> <?php echo implode( ' ', $wrapper_attributes ); ?>><span><?php echo $title; ?></span></a>
+    <a <?php echo implode( ' ', $wrapper_attributes ); ?>><span><?php echo $title; ?></span></a>
 <?php endif; ?>
