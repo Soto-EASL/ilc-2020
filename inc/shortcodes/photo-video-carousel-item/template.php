@@ -27,7 +27,7 @@ extract( $atts );
 
 
 $css_class = $this->getExtraClass( $el_class );
-$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $css_class, $this->ilcGtSettings( 'base' ), $atts );
+$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $css_class, $this->lpsGetSettings( 'base' ), $atts );
 $css_class .= ' wpex-carousel-slide ilc-pv-carousel-item ilc-pv-carousel-item-' . $type . ' clr';
 
 
