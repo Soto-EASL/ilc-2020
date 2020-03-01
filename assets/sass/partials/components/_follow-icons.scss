@@ -1,0 +1,96 @@
+
+/* Share icons row*/
+.easl-content-share-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    margin-top: 35px;
+}
+
+.sign-up-news {
+    margin-bottom: 0;
+}
+
+.heateor_sss_sharing_container {
+    margin-bottom: 0;
+}
+
+.single-fellowship .heateor_sss_sharing_container {
+    margin-top: 35px;
+}
+
+.heateor_sss_sharing_title {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    color: #004b87;
+    width: 60px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.heateor_sss_sharing_container .heateor_sss_sharing_ul {
+    float: left;
+    width: calc(100% - 60px);
+}
+
+.heateor_sss_sharing_container .heateorSssSharing {
+    float: left;
+    border: none;
+    line-height: 40px;
+    background: #f9f9f9 !important;
+    font-size: 14px;
+    height: 40px !important;
+    width: 40px !important;
+    margin: 0 5px 0 0;
+    text-align: center;
+    transition: opacity .25s;
+}
+
+.heateor_sss_sharing_container ul li:last-child .heateorSssSharing {
+    margin-right: 0;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing:hover {
+    opacity: .5;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing a:hover {
+    text-decoration: none;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssSharingSvg {
+    background: transparent;
+    display: inline-block;
+    font-family: "ticons";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssFacebookSvg::after {
+    content: "\f09a";
+    color: #3e5b98;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssTwitterSvg::after {
+    content: "\f099";
+    color: #4da7de;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssLinkedinSvg::after {
+    content: "\f0e1";
+    color: #0274b3;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssWhatsappSvg::after {
+    content: "\f232";
+    color: #60b82d;
+}
+
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssEmailSvg::after {
+    content: "\f0e0";
+    color: #454545;
+}

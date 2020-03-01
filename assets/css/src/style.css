@@ -312,6 +312,140 @@ h5 {
   background: #fc6719;
   color: #fff
 }
+.social_buttons_widget {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 99999
+}
+.social_buttons_widget .sidebar-box {
+  margin: 0
+}
+.social_buttons_widget .easl-follow-buttons-title {
+  width: 40px;
+  font-size: 10px;
+  display: block;
+  margin-bottom: 9px;
+  background: #f9f9f9;
+  padding: 2px 0;
+  text-align: center
+}
+.social_buttons_widget a.social-btn {
+  background: #f9f9f9;
+  color: #004b87;
+  display: block;
+  float: none;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  margin-bottom: 9px;
+  text-align: center;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s
+}
+.social_buttons_widget a.social-btn.facebook {
+  color: #3e5b98
+}
+.social_buttons_widget a.social-btn.twitter {
+  color: #4da7de
+}
+.social_buttons_widget a.social-btn.linkedin {
+  color: #0274b3
+}
+.social_buttons_widget a.social-btn.youtube {
+  color: red
+}
+.social_buttons_widget a.social-btn:active,
+.social_buttons_widget a.social-btn:hover {
+  opacity: .5
+}
+.easl-content-share-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 35px;
+  margin-top: 35px
+}
+.heateor_sss_sharing_container,
+.sign-up-news {
+  margin-bottom: 0
+}
+.single-fellowship .heateor_sss_sharing_container {
+  margin-top: 35px
+}
+.heateor_sss_sharing_title {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  color: #004b87;
+  width: 60px;
+  font-size: 16px;
+  font-weight: 400
+}
+.heateor_sss_sharing_container .heateor_sss_sharing_ul {
+  float: left;
+  width: calc(100% - 60px)
+}
+.heateor_sss_sharing_container .heateorSssSharing {
+  float: left;
+  border: none;
+  line-height: 40px;
+  background: #f9f9f9!important;
+  font-size: 14px;
+  height: 40px!important;
+  width: 40px!important;
+  margin: 0 5px 0 0;
+  text-align: center;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s
+}
+.heateor_sss_sharing_container ul li:last-child .heateorSssSharing {
+  margin-right: 0
+}
+.heateor_sss_sharing_container .heateorSssSharing:hover {
+  opacity: .5
+}
+.heateor_sss_sharing_container .heateorSssSharing a:hover {
+  text-decoration: none
+}
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssSharingSvg {
+  background: 0 0;
+  display: inline-block;
+  font-family: ticons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssFacebookSvg::after {
+  content: "\f09a";
+  color: #3e5b98
+}
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssTwitterSvg::after {
+  content: "\f099";
+  color: #4da7de
+}
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssLinkedinSvg::after {
+  content: "\f0e1";
+  color: #0274b3
+}
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssWhatsappSvg::after {
+  content: "\f232";
+  color: #60b82d
+}
+.heateor_sss_sharing_container .heateorSssSharing .heateorSssEmailSvg::after {
+  content: "\f0e0";
+  color: #454545
+}
 body .wpb_single_image .easl-vc-image-over {
   background: rgba(255,255,255,.8);
   color: #005796;
@@ -326,6 +460,10 @@ body .wpb_single_image .easl-vc-image-over {
   font-weight: 700;
   line-height: 24px;
   z-index: 2
+}
+#site-header {
+  -webkit-transform: none!important;
+  transform: none!important
 }
 #ilc-site-header-top {
   display: -webkit-box;

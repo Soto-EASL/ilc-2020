@@ -1,5 +1,5 @@
 <?php
-define( 'ILC_THEME_VERSION', '2020.2.1' );
+define( 'ILC_THEME_VERSION', '2020.2.2' );
 
 
 require_once get_stylesheet_directory() . '/inc/post-types/post-types.php';
@@ -38,7 +38,7 @@ function total_child_custom_style() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'total_child_custom_style' );
+add_action( 'wp_enqueue_scripts', 'total_child_custom_style', 30 );
 
 function ilc_custom_scripts() {
 	if ( wpex_get_mod( 'topbar_countdown_enable' ) ) {
@@ -68,4 +68,16 @@ function soto_sc_year() {
 }
 
 
+function register_custom_sidebar() {
+	register_sidebar( array(
+		'name'          => ( 'Social Buttons' ),
+		'id'            => 'social_buttons',
+		'description'   => ( 'Widgets in this area will be shown on all posts and pages.' ),
+		'before_widget' => '<div id="%1$s" class="sidebar-box widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
 
+add_action( 'widgets_init', 'register_custom_sidebar' );

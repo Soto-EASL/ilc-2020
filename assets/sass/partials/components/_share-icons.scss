@@ -1,0 +1,61 @@
+
+.social_buttons_widget {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99999;
+}
+
+.social_buttons_widget .sidebar-box {
+    margin: 0;
+}
+
+.social_buttons_widget .easl-follow-buttons-title {
+    width: 40px;
+    font-size: 10px;
+    display: block;
+    margin-bottom: 9px;
+    background: #f9f9f9;
+    padding: 2px 0;
+    text-align: center;
+}
+
+.social_buttons_widget a.social-btn {
+    background: #f9f9f9;
+    color: #004b87;
+    display: block;
+    float: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin-bottom: 9px;
+    text-align: center;
+    transition: opacity .25s;
+}
+
+.social_buttons_widget a.social-btn.facebook {
+    color: #3e5b98;
+}
+
+.social_buttons_widget a.social-btn.twitter {
+    color: #4da7de;
+}
+
+.social_buttons_widget a.social-btn.linkedin {
+    color: #0274b3;
+}
+
+.social_buttons_widget a.social-btn.youtube {
+    color: #f00;
+}
+
+.social_buttons_widget a.social-btn:hover,
+.social_buttons_widget a.social-btn:active {
+    opacity: .5;
+}

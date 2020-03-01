@@ -153,3 +153,22 @@ function ilc_page_content_top() {
 }
 
 add_action( 'wpex_hook_content_top', 'ilc_page_content_top' );
+
+
+function ilc_header_follow_icons() {
+	get_template_part( 'partials/follow-icons' );
+}
+
+add_action( 'wpex_hook_header_top', 'ilc_header_follow_icons', 2 );
+
+/**
+ * Display Social Share Icons
+ */
+function ilc_social_share_icons() {
+	get_template_part( 'partials/social-shares-icons' );
+}
+
+function ilc_social_share_icons_row() {
+	get_template_part( 'partials/social-shares-icons' );
+}
+add_action( 'wpex_hook_content_bottom', 'ilc_social_share_icons_row' );

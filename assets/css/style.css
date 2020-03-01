@@ -154,6 +154,49 @@
         font-size: 14px;
     }
 
+    /* Follow buttons */
+    .social_buttons_widget {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: auto;
+        right: auto;
+        background: #f0f0f0;
+        height: 32px;
+        overflow: hidden;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .social_buttons_widget .sidebar-box {
+        max-width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .social_buttons_widget .sidebar-box .custom-html-widget {
+        display: flex;
+        overflow: hidden;
+        justify-content: space-between;
+    }
+
+    .social_buttons_widget .sidebar-box .easl-follow-buttons-title,
+    .social_buttons_widget .sidebar-box a.social-btn {
+        height: 32px;
+        width: 28px;
+        line-height: 32px;
+        margin: 0 5px 0 0;
+        background-color: transparent;;
+    }
+
+    .social_buttons_widget .sidebar-box .easl-follow-buttons-title {
+        margin-right: 10px;
+        padding: 0;
+    }
+
+    .social_buttons_widget .sidebar-box a.social-btn:last-child {
+        margin-right: 0;
+    }
 
 }
 
