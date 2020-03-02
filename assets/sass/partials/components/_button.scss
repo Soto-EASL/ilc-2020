@@ -6,7 +6,7 @@
     line-height: 21px;
     font-weight: 700;
     overflow: hidden;
-    &:link, &:visited, &:active, &:hover {
+    &, &:link, &:visited, &:active, &:hover {
         color: $colorWhite;
         text-decoration: none;
     }

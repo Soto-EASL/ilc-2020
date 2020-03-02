@@ -1,0 +1,10 @@
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+.idea
+/assets/gulp-minify/
+/assets/lib/slider-revolution/js/*.min.js

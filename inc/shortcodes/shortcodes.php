@@ -7,6 +7,7 @@ function ilc_vc_get_shortcodes() {
 		'ilc_button',
 		'ilc_button_grid',
 		'ilc_heading',
+		'ilc_homepage_slider',
 		'ilc_key_dates',
 		'ilc_photo_video_carousel',
 		'ilc_photo_video_carousel_item',

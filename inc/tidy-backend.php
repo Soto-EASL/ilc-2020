@@ -44,7 +44,7 @@ function ilc_admin_menu_change() {
 	global $menu, $submenu, $pagenow, $title;
 	// Rename menu
 	$to_rename = array(
-		'revslider' => 'Homepage Sliders'
+		//'revslider' => 'Homepage Sliders'
 	);
 	$to_hide   = array(
 		'vc-general',
@@ -72,7 +72,8 @@ function ilc_amdin_menu_order( $menu_order ) {
 		$separator1_position = 1;
 	}
 	$front_end_menus = array(
-		'revslider', // Home page sliders
+		'edit.php?post_type=hp_slider', // Home page sliders
+		//'revslider', // Home page sliders
 		'edit.php?post_type=key_date', // Key Date
 		'edit.php',// News/posts
 		'edit.php?post_type=page', // Pages
