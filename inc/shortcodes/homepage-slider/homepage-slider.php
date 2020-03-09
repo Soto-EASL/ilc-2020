@@ -150,6 +150,11 @@ class ILC_VC_Homepage_Slider extends ILC_Shortcode {
 
 		while ( have_rows( 'slides', $slider_id ) ) {
 			the_row();
+
+			if ( ! get_sub_field( 'is_active' ) ) {
+				continue;
+			}
+			
 			$slider_image     = get_sub_field( 'image' );
 			$slider_image_alt = strip_tags( get_sub_field( 'image_alt' ) );
 			$slider_image_pos = strip_tags( get_sub_field( 'image_pos' ) );
