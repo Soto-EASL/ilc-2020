@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $this ILC_VC_Sponsors_Carousel
  */
 $el_class = $el_id = $css_animation = '';
+$items = '';
 $atts     = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
 
@@ -29,6 +30,13 @@ if ( ! empty( $el_id ) ) {
 if ( $css_class ) {
 	$wrapper_attributes[] = 'class="' . esc_attr( trim( $css_class ) ) . '"';
 }
+
+$items = absint($items);
+
+if($items < 2 ) {
+	$items = 5;
+}
+
 $car_wrapper_attributes   = array();
 $car_wrapper_attributes[] = 'class="wpex-carousel ilc-carousel owl-carousel clr"';
 
@@ -39,7 +47,7 @@ $carousel_options         = array(
 	'infinite_loop'          => true,
 	'center'                 => 'false',
 	'animation_speed'        => 150,
-	'items'                  => 5,
+	'items'                  => $items,
 	'items_scroll'           => 1,
 	'timeout_duration'       => 5000,
 	'items_margin'           => 15,

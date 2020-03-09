@@ -14,6 +14,20 @@ return array(
 	'description'             => __( 'Display sponsors carousel.', 'ilc' ),
 	'php_class_name'          => 'ILC_VC_Sponsors_Carousel',
 	'params'                  => array(
+		array(
+			'type'        => 'dropdown',
+			'heading'     => __( 'Items (desktop)', 'ilc' ),
+			'param_name'  => 'items',
+			'std'         => '5',
+			'value'       => array(
+				'2'  => '2',
+				'3'  => '3',
+				'4'  => '4',
+				'5'  => '5',
+				'6'  => '6',
+			),
+			'admin_label' => true,
+		),
 		vc_map_add_css_animation(),
 		array(
 			'type'        => 'el_id',
