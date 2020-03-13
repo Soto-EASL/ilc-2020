@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 function ilc_vc_get_shortcodes() {
 	$shortcodes = array(
+		'ilc_banner_image',
 		'ilc_button',
 		'ilc_button_grid',
 		'ilc_heading',

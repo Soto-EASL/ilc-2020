@@ -1,0 +1,54 @@
+
+.ilc-banner-image-wrap {
+}
+
+.ilc-banner-image-wrap .ilc-banner-image {
+    display: block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.ilc-banner-image-wrap .ilc-banner-image.ilc-banner-image-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ilc-banner-image .ilc-banner-image-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.ilc-banner-image-overlay {
+    position: absolute;
+    top: 26%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: stretch;
+}
+
+.ilc-banner-image-overlay-inner.ilc-banner-image-overlay-inner {
+    margin: 0 auto;
+    width: 75%;
+    max-width: 640px;
+
+    .ilc-hsc-ilc-hsc-title {
+        min-height: auto;
+    }
+
+    .ilc-hsc-ilc-hsc-subtitle {
+
+    }
+
+    .ilc-hsc-ilc-hsc-text {
+
+    }
+}
