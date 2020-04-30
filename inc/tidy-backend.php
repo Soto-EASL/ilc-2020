@@ -45,10 +45,19 @@ function ilc_admin_menu_change() {
 	// Rename menu
 	$to_rename = array(
 		//'revslider' => 'Homepage Sliders'
+		'vc-general' => 'Page Builder'
 	);
 	$to_hide   = array(
-		'vc-general',
-		'edit.php?post_type=acf-field-group'
+		'vc-general' => array(
+			'vc-general',
+			'vc-roles',
+			'vc-updater',
+			'vc-automapper',
+			'templatera',
+			'edit.php?post_type=vc_grid_item',
+			'vc-welcome',
+		),
+		'edit.php?post_type=acf-field-group' => 'edit.php?post_type=acf-field-group'
 	);
 	if ( 12 == get_current_user_id() ) {
 		$to_hide = array();
@@ -58,8 +67,18 @@ function ilc_admin_menu_change() {
 			$menu[ $id ][0] = $to_rename[ $data[2] ];
 			$menu[ $id ][3] = $to_rename[ $data[2] ];
 		}
-		if ( in_array( $data[2], $to_hide ) ) {
-			unset( $menu[ $id ] );
+		if ( array_key_exists( $data[2], $to_hide ) ) {
+			if ( is_array( $to_hide[ $data[2] ] ) ) {
+				if ( $submenu[ $data[2] ] ) {
+					foreach ( $submenu[ $data[2] ] as $sm_id => $sm_data ) {
+						if ( in_array( $sm_data[2], $to_hide[ $data[2] ] ) ) {
+							unset( $submenu[ $data[2] ][ $sm_id ] );
+						}
+					}
+				}
+			} else {
+				unset( $menu[ $id ] );
+			}
 		}
 	}
 }
@@ -77,6 +96,7 @@ function ilc_amdin_menu_order( $menu_order ) {
 		'edit.php?post_type=key_date', // Key Date
 		'edit.php',// News/posts
 		'edit.php?post_type=page', // Pages
+		'vc-general', // Page Builder
 		'edit.php?post_type=ilc_sponsor', // Sponsors
 		'ilc-settings', // Home page sliders
 	);
