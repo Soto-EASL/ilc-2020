@@ -52,15 +52,23 @@ body .page-header {
 }
 
 .ilc-page-header-nobg {
-    background-color: #ebefee;
+    background-color: transparent;
+    height: auto;
+    padding: 25px 0;
+    margin-bottom: 25px;
     .page-header-inner {
-        height: auto;
+        position: relative;
+        top: auto;
+        bottom: auto;
         .page-header-title {
             position: relative;
             top: auto;
             left: auto;
             display: inline-block;
-            transform: translateY(50%);
+            transform: none;
         }
+    }
+    .page-header-inner-wrap {
+        position: relative;
     }
 }

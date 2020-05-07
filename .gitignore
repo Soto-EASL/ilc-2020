@@ -8,3 +8,4 @@ Thumbs.db
 .idea
 /assets/gulp-minify/
 /assets/lib/slider-revolution/js/*.min.js
+/gulp/node_modules/

@@ -647,18 +647,26 @@ body .page-header {
   padding: 18px 25px
 }
 .ilc-page-header-nobg {
-  background-color: #ebefee
+  background-color: transparent;
+  height: auto;
+  padding: 25px 0;
+  margin-bottom: 25px
 }
 .ilc-page-header-nobg .page-header-inner {
-  height: auto
+  position: relative;
+  top: auto;
+  bottom: auto
 }
 .ilc-page-header-nobg .page-header-inner .page-header-title {
   position: relative;
   top: auto;
   left: auto;
   display: inline-block;
-  -webkit-transform: translateY(50%);
-  transform: translateY(50%)
+  -webkit-transform: none;
+  transform: none
+}
+.ilc-page-header-nobg .page-header-inner-wrap {
+  position: relative
 }
 .ilc-heading-wrap {
   margin: 0 0 30px

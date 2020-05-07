@@ -26,58 +26,49 @@ if ( ! defined( 'ABSPATH' ) ) {
         .main-content {
             position: relative;
             min-height: 100vh;
-        }
-
-        .main-content img {
-            width: 100%;
-            height: auto;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .content-wrapper {
-            position: fixed;
-            bottom: 20px;
             width: 355px;
-            right: 20px;
-            z-index: 1;
         }
 
         .ilc-password  {
             background: rgba(255, 255, 255 , .75);
-            width: 220px;
+            width: 100%;
             display: block;
-            border: 1px solid #eee;
-            height: 32px;
-            margin: 0 15px 0 0;
+            border: 1px solid #ddd;
+            height: 40px;
+            margin: 0 15px 25px 0;
             padding: 0 8px;
             font-size: 16px;
-            line-height: 32px;
+            line-height: 40px;
             color: #666;
             font-weight: normal;
-            float: left;
         }
 
         .ilc-submit {
             display: block;
-            height: 32px;
+            height: 40px;
             padding: 0;
             margin: 0;
-            line-height: 32px;
+            line-height: 40px;
             font-size: 16px;
             font-weight: normal;
             float: left;
             cursor: pointer;
-            width: 120px;
-            background: rgba(255, 255, 255 , .75);
-            border: 1px solid #eee;
-            color: #666;
+            width: 100%;
+            background: #63cef5;
+            border: 0 none;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 <div class="main-container">
     <div class="main-content">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/website-coming-soon-ilc-2020.jpg" alt="">
         <div class="content-wrapper">
             <form action="" method="post">
                 <input class="ilc-password" type="password" name="ilcmh_pass" id="ilcmh_pass" value=""/>
