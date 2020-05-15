@@ -1,5 +1,5 @@
 <?php
-define( 'ILC_THEME_VERSION', '2020.05.05' );
+define( 'ILC_THEME_VERSION', '2020.05.14' );
 
 
 require_once get_stylesheet_directory() . '/inc/post-types/post-types.php';
@@ -113,7 +113,7 @@ function ilcmh_set_restricted_access() {
 	}
 }
 
-add_action( 'init', 'ilcmh_set_restricted_access' );
+//add_action( 'init', 'ilcmh_set_restricted_access' );
 
 
 function ilcmh_load_landing_page() {
