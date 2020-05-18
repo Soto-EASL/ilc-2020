@@ -14,7 +14,7 @@ const themeRoot = '../';
 const styleSRC = themeRoot + 'assets/sass/style.scss';
 const themeInfo = themeRoot + 'assets/sass/_themeInfo.css';
 const styleDestination = themeRoot + '/assets/css/src/';
-const sassWatchFiles = themeRoot + 'assets/sass/**/*.scss';
+const sassWatchFiles = [themeRoot + 'assets/sass/**/*.scss', themeRoot + 'assets/sass/**/*.css'];
 const jsWatchFiles = themeRoot + 'assets/js/src/*.js';
 
 function sassCompile(cb) {

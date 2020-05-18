@@ -1,0 +1,39 @@
+body .vc_tta.vc_general .vc_tta-tabs-container,
+body .vc_tta.vc_general .vc_tta-panels-container{
+    margin: 0;
+}
+body .vc_tta.vc_general .vc_tta-tabs-container .vc_tta-tabs-list,
+body .vc_tta.vc_general .vc_tta-panels-container .vc_tta-panels{
+    border-bottom: 2px solid #8f8f8f;
+}
+body .vc_tta.vc_general .vc_tta-tabs-container .vc_tta-tabs-list .vc_tta-tab {
+    margin: 0 2px 0 0;
+}
+body .vc_tta.vc_general .vc_tta-tabs-container .vc_tta-tabs-list .vc_tta-tab:last-child {
+    margin: 0;
+}
+body .vc_tta.vc_general .vc_tta-tabs-list .vc_tta-tab > a,
+body .vc_tta.vc_general .vc_tta-panels-container .vc_tta-panels .vc_tta-panel .vc_tta-panel-title > a{
+    border: 0 none;
+    border-radius: 0;
+    background-color: #e1e1e1;
+    color: #a7a7a7;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 16px 20px 14px
+}
+body .vc_tta.vc_general .vc_tta-tabs-list .vc_tta-tab.vc_active > a,
+body .vc_tta.vc_general .vc_tta-tabs-list .vc_tta-tab:hover > a,
+body .vc_tta.vc_general .vc_tta-panels-container .vc_tta-panels .vc_tta-panel.vc_active .vc_tta-panel-title > a,
+body .vc_tta.vc_general .vc_tta-panels-container .vc_tta-panels .vc_tta-panel:hover .vc_tta-panel-title > a {
+    background-color: #8f8f8f;
+    color: #fff;
+}
+body .vc_tta.vc_general.vc_tta-tabs .vc_tta-panels {
+    border: 0 none!important;
+    border-radius: 0!important;
+    background-color: transparent!important;
+}
+body .vc_tta.vc_general.vc_tta-tabs .vc_tta-panels .vc_tta-panel-body {
+    padding: 30px 0;
+}
