@@ -84,10 +84,10 @@ function ilc_side_menu_page_wrap_open() {
 	$page_id            = wpex_get_current_post_id();
 	$page_has_side_menu = get_field( 'page_has_side_menu', $page_id );
 	$page_side_menu     = get_field( 'page_side_menu', $page_id );
-	if(!$page_has_side_menu || !$page_side_menu){
-	    return;
-    }
-	get_template_part('partials/side-menu-wrap-open');
+	if ( ! $page_has_side_menu || ! $page_side_menu ) {
+		return;
+	}
+	get_template_part( 'partials/side-menu-wrap-open' );
 }
 
 function ilc_side_menu_page_wrap_close() {
@@ -97,10 +97,10 @@ function ilc_side_menu_page_wrap_close() {
 	$page_id            = wpex_get_current_post_id();
 	$page_has_side_menu = get_field( 'page_has_side_menu', $page_id );
 	$page_side_menu     = get_field( 'page_side_menu', $page_id );
-	if(!$page_has_side_menu || !$page_side_menu){
+	if ( ! $page_has_side_menu || ! $page_side_menu ) {
 		return;
 	}
-	get_template_part('partials/side-menu-wrap-close');
+	get_template_part( 'partials/side-menu-wrap-close' );
 }
 
 add_action( 'wpex_hook_content_before', 'ilc_side_menu_page_wrap_open', 1 );
@@ -171,4 +171,125 @@ function ilc_social_share_icons() {
 function ilc_social_share_icons_row() {
 	get_template_part( 'partials/social-shares-icons' );
 }
+
 add_action( 'wpex_hook_content_bottom', 'ilc_social_share_icons_row' );
+
+function ilc_event_schema_json_ld() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+	$data                     = array();
+	$event_name               = get_field( 'ilc_event_name', 'option' );
+	$event_tz_offset          = get_field( 'ilc_event_tz_offset', 'option' );
+	$event_start_date         = get_field( 'ilc_event_start_date', 'option' );
+	$event_end_date           = get_field( 'ilc_event_end_date', 'option' );
+	$event_status             = get_field( 'ilc_event_status', 'option' );
+	$event_prev_start_date    = get_field( 'ilc_event_prev_start_date', 'option' );
+	$event_description        = get_field( 'ilc_event_description', 'option' );
+	$event_loc_type           = get_field( 'ilc_event_loc_type', 'option' );
+	$event_loc_url            = get_field( 'ilc_event_loc_url', 'option' );
+	$event_loc_name           = get_field( 'ilc_event_loc_name', 'option' );
+	$event_loc_street_address = get_field( 'ilc_event_loc_street_address', 'option' );
+	$event_loc_locality       = get_field( 'ilc_event_loc_locality', 'option' );
+	$event_loc_region         = get_field( 'ilc_event_loc_region', 'option' );
+	$event_loc_postal_code    = get_field( 'ilc_event_loc_postal_code', 'option' );
+	$event_loc_country        = get_field( 'ilc_event_loc_country', 'option' );
+	$ilc_event_org_name       = get_field( 'ilc_event_org_name', 'option' );
+	$ilc_event_org_url        = get_field( 'ilc_event_org_url', 'option' );
+	$event_image_16x9         = get_field( 'ilc_event_image_16x9', 'option' );
+	$event_image_4x3          = get_field( 'ilc_event_image_4x3', 'option' );
+	$event_image_1x1          = get_field( 'ilc_event_image_1x1', 'option' );
+
+	if ( ! $event_name || ! $event_start_date ) {
+		return;
+	}
+
+	$location = array();
+	if ( 'Virtual' == $event_loc_type && $event_loc_url ) {
+		$location = array(
+			'@type' => 'VirtualLocation',
+			'url'   => esc_url( $event_loc_url ),
+		);
+	} elseif ( $event_loc_street_address || $event_loc_locality || $event_loc_region || $event_loc_country ) {
+		$location['@type'] = 'Place';
+		if ( $event_loc_name ) {
+			$location['name'] = $event_loc_name;
+		}
+		if ( $event_loc_street_address ) {
+			$location['streetAddress'] = $event_loc_street_address;
+		}
+		if ( $event_loc_locality ) {
+			$location['addressLocality'] = $event_loc_locality;
+		}
+		if ( $event_loc_postal_code ) {
+			$location['postalCode'] = $event_loc_postal_code;
+		}
+		if ( $event_loc_region ) {
+			$location['addressRegion'] = $event_loc_region;
+		}
+		if ( $event_loc_country ) {
+			$location['addressCountry'] = $event_loc_country;
+		}
+	}
+	if ( ! $location ) {
+		return;
+	}
+
+	$event_tz_offset = trim( $event_tz_offset );
+	if ( ! $event_tz_offset ) {
+		$event_tz_offset = '+00:00';
+	}
+
+	$data['@context']  = 'https://schema.org';
+	$data['@type']     = 'Event';
+	$data['name']      = $event_name;
+	$data['startDate'] = $event_start_date . $event_tz_offset;
+	if ( $event_end_date ) {
+		$data['endDate'] = $event_end_date . $event_tz_offset;
+	}
+	if ( 'VirtualLocation' == $location['@type'] ) {
+		$data['eventAttendanceMode'] = 'https://schema.org/OnlineEventAttendanceMode';
+	} else {
+		$data['eventAttendanceMode'] = 'https://schema.org/OfflineEventAttendanceMode';
+	}
+	if ( 'Cancelled' == $event_status ) {
+		$data['eventStatus'] = 'https://schema.org/EventCancelled';
+	} elseif ( 'Postponed' == $event_status ) {
+		$data['eventStatus'] = 'https://schema.org/EventPostponed';
+	} elseif ( 'Rescheduled' == $event_status ) {
+		$data['eventStatus'] = 'https://schema.org/EventRescheduled';
+		if ( $event_prev_start_date ) {
+			$data['previousStartDate'] = $event_prev_start_date . $event_tz_offset;
+		}
+	} else {
+		$data['eventStatus'] = 'https://schema.org/EventScheduled';
+	}
+	$data['location'] = $location;
+
+	$images = array();
+	if ( $event_image_1x1 ) {
+		$images[] = $event_image_1x1;
+	}
+	if ( $event_image_4x3 ) {
+		$images[] = $event_image_4x3;
+	}
+	if ( $event_image_16x9 ) {
+		$images[] = $event_image_16x9;
+	}
+	if($images) {
+	    $data['image'] = $images;
+    }
+	if ( $event_description ) {
+		$data['description'] = $event_description;
+	}
+	if ( $ilc_event_org_name && $ilc_event_org_url ) {
+		$data['organizer'] = array(
+			'@type' => 'Organization',
+			'name'  => $ilc_event_org_name,
+			'url'   => esc_url( $ilc_event_org_url ),
+		);
+	}
+	echo '<script type="application/ld+json">' . json_encode( $data,  JSON_UNESCAPED_SLASHES ) . '</script>';
+}
+
+add_action( 'wp_head', 'ilc_event_schema_json_ld', 1 );
