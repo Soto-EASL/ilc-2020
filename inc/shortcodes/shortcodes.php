@@ -10,6 +10,8 @@ function ilc_vc_get_shortcodes() {
 		'ilc_heading',
 		'ilc_homepage_slider',
 		'ilc_key_dates',
+		'ilc_media_grid',
+		'ilc_media_grid_item',
 		'ilc_photo_video_carousel',
 		'ilc_photo_video_carousel_item',
 		'ilc_recent_news',
