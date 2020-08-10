@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php wpex_get_template_part('header_logo_inner'); ?>
             </div>
             <div class="ilc-header-buttons-wrap">
+                <?php get_template_part('partials/header/countdown'); ?>
                 <?php get_template_part('partials/header/header-buttons'); ?>
             </div>
         </div><!-- #site-header-inner -->

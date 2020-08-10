@@ -595,6 +595,34 @@ body #site-header-inner {
   padding-top: 25px;
   padding-bottom: 25px
 }
+.ilc-header-countdown-wrap {
+  margin: 0;
+  text-align: right
+}
+.ilc-header-countdown {
+  display: inline-block;
+  text-align: center;
+  background: #da642e;
+  line-height: 1em;
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  width: calc((100% - 10px)/ 2);
+  text-transform: uppercase;
+  color: #fff;
+  padding: 6px 0;
+  margin-bottom: 7px
+}
+.ilc-header-countdown span,
+.ilc-header-countdown strong {
+  display: block;
+  margin: 0;
+  line-height: 1em
+}
+.ilc-header-countdown strong {
+  font-size: 26px
+}
+.ilc-header-countdown span {
+  font-size: 14px
+}
 #ilc-site-header-nav {
   background: #8f8f8f
 }
