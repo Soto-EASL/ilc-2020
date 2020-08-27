@@ -99,6 +99,11 @@
 
     }
 
+    .single-post .ilc-heading-wrap h1.ilc-heading, .single-post .ilc-page-header-bg-wrap .page-header-title {
+        font-size: 18px !important;
+        line-height: 18px !important;
+    }
+
     .wpb_single_image.wpb_content_element {
         margin-bottom: 10px;
     }

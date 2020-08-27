@@ -1,5 +1,5 @@
 <?php
-define( 'ILC_THEME_VERSION', '2020.08.07' );
+define( 'ILC_THEME_VERSION', '2020.08.27' );
 
 
 require_once get_stylesheet_directory() . '/inc/post-types/post-types.php';

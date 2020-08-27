@@ -80,7 +80,7 @@
         "vcex_post_type_grid",
         "vcex_post_type_flexslider",
         "vcex_pricing",
-        "vcex_recent_news",
+        //"vcex_recent_news",
         "vcex_searchbar",
         "vcex_shortcode",
         "vcex_skillbar",
